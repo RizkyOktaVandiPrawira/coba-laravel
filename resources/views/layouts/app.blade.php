@@ -33,7 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        
+                        @auth
+                        <li class="nav-item">
+                        <a href="{{ url('admin/user/index', []) }}" class="nav-link">Data User</a>
+                        </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -73,6 +78,10 @@
         </nav>
 
         <main class="py-4">
+            @if (\Session::has('pesan'))
+            <div class="alert alert-primary">
+                {!! \Session::get('pesan') !!}
+            </div>
             @yield('content')
         </main>
     </div>

@@ -16,25 +16,7 @@
 
                     You are logged in!
 
-                    <h2>{{ $judul }}</h2>
-
-                    <table class="table table-light">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>Nama</th>
-                                <th>Email</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($pengguna as $row)
-                            <tr>
-                                <td>{{ $row->name }}</td>
-                                <td>{{ $row->email }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
+                  
                 </div>
             </div>
         </div>

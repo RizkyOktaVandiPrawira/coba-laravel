@@ -19,6 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('user/index','BukuController@index');
+    Route::get('user/tambah','BukuController@tambah');
+    Route::post('user/simpan','BukuController@simpan');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('user/edit/{id}','BukuController@edit');
+    Route::put('user/update','BukuController@update');
+
+    });
